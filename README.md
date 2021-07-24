@@ -1,2 +1,2 @@
 # volume-control
-![Schaltung](pictures/Schaltung.jpg)
+![Schaltung](pictures/Schaltung.PNG)
