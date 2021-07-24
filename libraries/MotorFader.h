@@ -11,8 +11,8 @@ class MotorFader {
     int faderMin;
     int faderMax;
     int tolerance;
-    int faderSpeed[3] = {255, 150, 100};
-    int faderSpeedDist[2] = {600, 100};
+    int faderSpeed[3] = {200, 150, 95};
+    int faderSpeedDist[2] = {600, 130};
   public:
     MotorFader(int motor_pin_a, int motor_pin_b, int enable_pin, int potentiometer_pin, int faderMin, int faderMax, int tolerance);
 

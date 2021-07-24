@@ -47,6 +47,13 @@ void MotorFader::ToPos(int target){
   int targetPos = map(target, 0, 100, faderMin, faderMax);
   int targetMin = GetFaderMinTarget(targetPos);
   int targetMax = GetFaderMaxTarget(targetPos);
+  if (target == 100){
+    targetMin = faderMax;
+    targetMax = faderMax + 2 * tolerance;
+  }else if (target == 0){
+    targetMin = faderMin - 2 * tolerance;
+    targetMax = faderMin;
+  }
 
   SetFaderSpeed(2);
   int i = 0;
@@ -65,7 +72,7 @@ void MotorFader::ToPos(int target){
     } else if (currentPos > targetMax){
       if (currentPos - targetMax > faderSpeedDist[0]){
         SetFaderSpeed(0);
-      }else if (currentPos - targetMax > faderSpeedDist[2]){
+      }else if (currentPos - targetMax > faderSpeedDist[1]){
         SetFaderSpeed(1);
       }else{
         SetFaderSpeed(2);
